@@ -40,7 +40,7 @@ const styles = {
   },
   card: {
     margin: '10px',
-  }
+  },
 };
 
 class App extends Component {
@@ -99,7 +99,8 @@ class App extends Component {
           {user.auth.name}
           !
         </h1>
-        <h2>Welcome to the HeatSync Labs Members App.</h2>
+        <h2>Welcome to the HeatSync Labs Members Orange.</h2>
+        <pre>{JSON.stringify({ 'process.env': process.env }, null, 2)}</pre>
         {newUserList}
         {statsList}
       </div>

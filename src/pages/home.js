@@ -29,7 +29,7 @@ const baseStyles = {
   mainBody: {
     display: 'flex',
     height: '100%',
-  }
+  },
 };
 
 class Home extends Component {
@@ -37,7 +37,8 @@ class Home extends Component {
     return (
       <div style={baseStyles.container}>
         <Header {...this.props} />
-        <h1>Welcome to the HeatSync Labs Members App.</h1>
+        <h1>Welcome to the HeatSync Labs Members Potato.</h1>
+        <pre>{JSON.stringify({ 'process.env': process.env }, null, 2)}</pre>
       </div>
     );
   }
