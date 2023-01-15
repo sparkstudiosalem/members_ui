@@ -19,8 +19,11 @@ WORKDIR /home/app
 
 COPY package.json /home/app/
 COPY package-lock.json /home/app/
-COPY docker-run.sh /home/app/
-
 RUN npm ci
 
+COPY tsconfig.json /home/app/tsconfig.json
+COPY public /home/app/public
+COPY src /home/app/src
+
+COPY docker-run.sh /home/app/
 CMD ./docker-run.sh

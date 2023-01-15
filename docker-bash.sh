@@ -12,10 +12,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-if [ $NODE_ENV == "production" ]
-then
-  npm run build
-else
-  echo "Starting up development server. PORT is $PORT"
-  npm run start
-fi
+docker compose up members_ui -d
+docker exec -i -t members_ui /bin/sh -l

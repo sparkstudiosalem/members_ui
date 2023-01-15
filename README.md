@@ -8,7 +8,7 @@ This is the UI component of the [members_app](https://github.com/heatsynclabs/me
 
 ## Features
 
-* JS frontent that connects directly to the members_api backend
+* JS front-end that connects directly to the members_api backend
 * all of create-react-app features
 * react-router
 * redux
@@ -61,6 +61,19 @@ To access the container's shell prompt:
 To view the container's website from the docker host machine: `http://localhost:3005`
 
 Note that this app depends on the API host pretty extensively, so again if you want a working app you probably want to check out the `members_app` repo.
+
+### Building for Production
+
+The same Docker image used for developing the app can also be used to build the production assets.
+
+```bash
+docker build -t members_ui .
+docker run \
+  --mount "type=bind,source=$PWD,destination=/home/app" \
+  -e REACT_APP_MEMBERS_API_URL=https://api.heatsynclabs.org \
+  -e NODE_ENV=production \
+  members_ui
+```
 
 ### Debugging Docker Dev Usage
 
