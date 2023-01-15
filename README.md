@@ -68,11 +68,9 @@ The same Docker image used for developing the app can also be used to build the 
 
 ```bash
 docker build -t members_ui .
-docker run \
-  --mount "type=bind,source=$PWD,destination=/home/app" \
-  -e REACT_APP_MEMBERS_API_URL=https://api.heatsynclabs.org \
-  -e NODE_ENV=production \
-  members_ui
+docker run --rm \
+  --mount "type=bind,source=$(readlink -f .),destination=/home/app" \
+  -e NODE_ENV=production $(docker build -q .)
 ```
 
 ### Debugging Docker Dev Usage
