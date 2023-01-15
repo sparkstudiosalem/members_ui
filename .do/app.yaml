@@ -1,0 +1,16 @@
+name: members-ui
+region: nyc
+static_sites:
+- dockerfile_path: Dockerfile.static
+  envs:
+  - key: REACT_APP_MEMBERS_API_URL
+    scope: BUILD_TIME
+    value: https://sparkstudiosalem.com:3004
+  github:
+    branch: build-gha-digitalocean
+    deploy_on_push: true
+    repo: sparkstudiosalem/members_ui
+  name: members-ui
+  output_dir: /home/app/build
+  routes:
+  - path: /
