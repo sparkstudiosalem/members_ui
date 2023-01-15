@@ -64,13 +64,10 @@ Note that this app depends on the API host pretty extensively, so again if you w
 
 ### Building for Production
 
-The same Docker image used for developing the app can also be used to build the production assets.
+`Dockerfile.static` is used to create production builds within a Docker image, which hosting providers can then host statically. The build may be configured with `--build-args` in order to bake-in deployment-specific values, such as the URL for the remote API.
 
 ```bash
-docker build -t members_ui .
-docker run --rm \
-  --mount "type=bind,source=$(readlink -f .),destination=/home/app" \
-  -e NODE_ENV=production $(docker build -q .)
+docker build --file Dockerfile.static --build-arg REACT_APP_MEMBERS_API_URL=https://hsl-members-api.herokuapp.com .
 ```
 
 ### Debugging Docker Dev Usage

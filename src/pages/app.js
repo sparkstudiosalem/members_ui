@@ -99,8 +99,7 @@ class App extends Component {
           {user.auth.name}
           !
         </h1>
-        <h2>Welcome to the HeatSync Labs Members Orange.</h2>
-        <pre>{JSON.stringify({ 'process.env': process.env }, null, 2)}</pre>
+        <h2>Welcome to the HeatSync Labs Members App.</h2>
         {newUserList}
         {statsList}
       </div>

@@ -38,7 +38,6 @@ class Home extends Component {
       <div style={baseStyles.container}>
         <Header {...this.props} />
         <h1>Welcome to the HeatSync Labs Members Potatos.</h1>
-        <pre>{JSON.stringify({ 'process.env': process.env }, null, 2)}</pre>
       </div>
     );
   }
