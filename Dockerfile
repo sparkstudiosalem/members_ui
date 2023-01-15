@@ -26,5 +26,6 @@ COPY public /home/app/public
 COPY src /home/app/src
 
 COPY docker-run.sh /home/app/
+COPY build /home/app/build
 
-RUN ./docker-run.sh
+CMD ./docker-run.sh
