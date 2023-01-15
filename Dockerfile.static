@@ -1,0 +1,21 @@
+FROM node:19.3-alpine AS dev
+
+WORKDIR /home/app
+
+COPY package.json /home/app/
+COPY package-lock.json /home/app/
+RUN npm ci
+
+COPY tsconfig.json /home/app/tsconfig.json
+COPY public /home/app/public
+COPY src /home/app/src
+
+COPY docker-run.sh /home/app/
+
+ARG NODE_ENV
+ARG REACT_APP_MEMBERS_API_URL
+
+ENV NODE_ENV=$NODE_ENV
+ENV REACT_APP_MEMBERS_API_URL=$REACT_APP_MEMBERS_API_URL
+
+RUN npm run build
