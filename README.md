@@ -1,14 +1,14 @@
 # Member Management UI
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-
-[![Build Status](https://travis-ci.com/heatsynclabs/members_ui.svg?branch=master)](https://travis-ci.com/heatsynclabs/members_ui)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Build Status](https://travis-ci.com/heatsynclabs/members_ui.svg?branch=master)](https://travis-ci.com/heatsynclabs/members_ui)
 
 This is the UI component of the [members_app](https://github.com/heatsynclabs/members_app). See that repo for full project info and general readme information.
 
+See the CONTRIBUTING file for information on helping out, or our [Wiki](https://wiki.heatsynclabs.org/wiki/HSL_API) for project governance.
+
 ## Features
 
-* JS frontent that connects directly to the members_api backend
+* JS frontend that connects directly to the members_api backend
 * all of create-react-app features
 * react-router
 * redux
@@ -20,9 +20,9 @@ This is the UI component of the [members_app](https://github.com/heatsynclabs/me
 * Password reset page
 * Logged in home page
 
-## Testing
+## Logging In (Dev/Test)
 
-Presuming nothing's changed on the API side, you can login with `admin@example.com` as a username, and access any emails sent at http://localhost:10001 in dev mode. Other users are jimbo, gobie, and hardy all at example.com, with member_levels of 1, 5, and 10 each.
+Presuming nothing's changed on the API side, once the docker stack is started you can login with `admin@example.com` as a username, and access any emails sent at http://localhost:10001 in dev mode. Other users are jimbo, gobie, and hardy all at example.com, with member_levels of 1, 5, and 10 each.
 
 ## Normal Docker Dev Usage
 
@@ -72,3 +72,4 @@ You'll then have to manually run commands like `npm install` or `npm run start` 
 
 Since this is a React app, console.log will output directly to your browser's Javascript console for debugging purposes.
 
+MORE
