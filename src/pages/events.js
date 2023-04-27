@@ -16,10 +16,10 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import EditIcon from '@mui/icons-material/Edit';
 import Header from '../components/header';
 import { colors } from '../lib/styles';
 import { getAll, formatDateRange } from '../state/events';
-import EditIcon from '@mui/icons-material/Edit';
 
 const baseStyles = {
   container: {
