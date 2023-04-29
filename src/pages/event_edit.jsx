@@ -7,6 +7,7 @@ import { CircularProgress, Paper } from '@mui/material';
 import { edit, getOne } from '../state/events';
 import FormInputText from '../components/form/FormInputText';
 import FormInputDate from '../components/form/FormInputDate';
+import FormAutocomplete from '../components/form/FormAutocomplete';
 import Header from '../components/header';
 // import { connect } from 'react-redux';
 // import { Link } from 'react-router-dom';
@@ -114,15 +115,14 @@ export default function EventEdit() {
             <FormInputDate name="start_date" label="Start Date" />
             <FormInputDate name="end_date" label="End Date" />
             <FormInputText name="frequency" label="Frequency" />
+            <FormAutocomplete name="frequency" label="Frequency" options={['daily', 'weekly', 'monthly']} />
             <FormInputText name="location" label="Location" />
           </form>
         </FormProvider>
 
-        Hello
         <pre>{JSON.stringify(event, null, 2)}</pre>
         <button form="eventForm" type="submit">Submit</button>
 
-        {/* <button type="button" onClick={reset(onSubmit)}>Reset</button> */}
       </Paper>
     </>
   );

@@ -1,24 +1,30 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { useCallback } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
-import { TextField } from '@mui/material';
+import { Autocomplete, TextField } from '@mui/material';
 
-export default function FormInputText({ name, label, multiline }) {
+function renderInput(tagProps) {
+  return <TextField {...tagProps} />;
+}
+
+export default function FormAutocomplete({ name, label, options }) {
   const { control } = useFormContext();
 
   const handleRender = useCallback(({ field: { value, onChange }, fieldState: { error } }) => {
     return (
-      <TextField
+      <Autocomplete
         name={name}
         label={label}
-        multiline={!!multiline}
         error={!!error}
         value={value}
+        options={options}
         fullWidth={true}
         variant="outlined"
+        renderInput={renderInput}
         onChange={onChange}
       />
     );
-  }, [label, multiline, name]);
+  }, [label, name, options]);
 
   return (
     <Controller name={name} control={control} render={handleRender} />
